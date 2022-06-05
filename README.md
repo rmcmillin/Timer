@@ -7,7 +7,7 @@ Set the number of timers required for the project in **[timer.h](src/timer.h?raw
 As the library is meant for embedded projects, it does not use dynamic memory and memory for timers is set at compile time.
 
 ```c
-//Number of values to use for the moving average
+//Maximum numer of timers that can be used. 
 #define MAX_TIMERS  5
 ```
 
