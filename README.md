@@ -46,12 +46,35 @@ if (timer_register(&myID, 1000) != TIMER_SUCCESS){
 ```
 Ensure you check the return value of the function before using myID.  This ID is used to access a unique timer using the provided functions
 
-timer_free() - sets a timer to unused
-timer_start() - starts a timer as long as the period is greater than 0
-timer_setPeriod() - sets the time in ms until timer expires
-timer_isExpired() - returns 1 if expired otherwise 0
-timer_isRunning() - returns 1 if runnning otherwise 0
-timer_timeRemaining() - calculates time until expiry
+Sets a timer to unused
+```c
+timer_free()
+```
+
+Starts a timer as long as the period is greater than 0
+```c
+timer_start()
+```
+
+Sets the time in ms until timer expires
+```c
+timer_setPeriod()
+```
+
+returns 1 if expired otherwise 0
+```c
+timer_isExpired()
+```
+
+returns 1 if runnning otherwise 0
+```c
+timer_isRunning()
+```
+
+calculates time until expiry
+```c
+timer_timeRemaining()
+```
 
 
 ## License
