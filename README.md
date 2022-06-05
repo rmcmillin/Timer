@@ -48,32 +48,32 @@ Ensure you check the return value of the function before using myID.  This ID is
 
 Sets a timer to unused
 ```c
-timer_free()
+timerRetVal_t timer_free(uint8_t timerID);
 ```
 
 Starts a timer as long as the period is greater than 0
 ```c
-timer_start()
+timerRetVal_t timer_start(uint8_t timerID);
 ```
 
 Sets the time in ms until timer expires
 ```c
-timer_setPeriod()
+timerRetVal_t timer_setPeriod(uint8_t timerID, uint32_t period);
 ```
 
 returns 1 if expired otherwise 0
 ```c
-timer_isExpired()
+int8_t timer_isExpired(uint8_t timerID);
 ```
 
 returns 1 if runnning otherwise 0
 ```c
-timer_isRunning()
+int8_t timer_isRunning(uint8_t timerID);
 ```
 
 calculates time until expiry
 ```c
-timer_timeRemaining()
+uint32_t timer_timeRemaining (uint8_t timerID);
 ```
 
 
