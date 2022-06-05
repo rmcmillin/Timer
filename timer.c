@@ -1,3 +1,8 @@
+/** \file timer.c
+ * Timer for embedded project
+ *
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -6,13 +11,21 @@
 
 static uint32_t systick;
 
+/**
+* Struct definition individual timer
+*/
+
 struct Timer{
-    timerStatus_t status;
-    uint32_t startTime;
-    uint32_t period;
-    timerType_t callbackType;
-    action expiryFunction;
+    timerStatus_t status;       /**< timerStatus_t UNUSED, STOPPED, RUNNING, EXPIRED*/
+    uint32_t startTime;         /**< time stamp of start time*/
+    uint32_t period;            /**< Time in ms until expiry*/
+    timerType_t callbackType;   /**< TIMER_POLL or TIMER_INTERRUPT*/
+    action expiryFunction;      /**< Function pointer to function that runs on timer expiry.  Return value of this function must be enum expiryAction NONE or RESTART*/
 };
+
+/**
+* Array of struct to hold all the timers
+*/
 
 static struct Timer timerList [MAX_TIMERS];
 
@@ -259,7 +272,6 @@ uint32_t timer_timeRemaining (uint8_t timerID){
  * \return current tick count
  *
  */
-
 
 uint32_t timer_getTick(){
     return systick;
