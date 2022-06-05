@@ -3,7 +3,7 @@
 
 ## How to Use
 ### Setup
-Set the number of timers required for the project in **[timer.h](blob/main/timer.h?raw=1)**
+Set the number of timers required for the project in **[timer.h](timer.h?raw=1)**
 As the library is meant for embedded projects, it does not use dynamic memory and memory for timers is set at compile time.
 
 ```c
