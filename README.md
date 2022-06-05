@@ -1,9 +1,6 @@
 # Timer
  Timer for embedded projects
 
-# timer.c
-A simple library that provides timers with 1ms resolution.
-
 ## How to Use
 ### Setup
 Set the number of timers required for the project in **[timer.h](src/timer.h?raw=1)**
